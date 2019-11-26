@@ -16,11 +16,11 @@ object ReadHDFS {
 
   def writeParquet(sc: SparkContext, sqlContext: SQLContext) = {
     // Read file as RDD
-    val rdd = sqlContext.read.format(source ="csv").option("header", "true").load(path ="hdfs://SGBBDPOC01.men.com.my:8020/data/okla/txt/okala_main_all.csv")
+    val rdd = sqlContext.read.format(source ="csv").option("header", "true").load(path ="hdfs://SGBBDCDPOC0123.men.com.my:8020/data/okla/txt/okala_main_all.csv")
     // Convert rdd to data frame using toDF; the following import is required to use toDF function.
     val df: DataFrame = rdd.toDF()
     // Write file to parquet
-    df.write.parquet("hdfs://SGBBDCDPOC01.men.maxis.com.my:8020/tmp/android_okla1")
+    df.write.parquet("hdfs://SGBBDCDPOC0123.men.max.com.my:8020/tmp/android_okla1")
 
     //How to delete the file in hdfs
     // val fs = org.apache.hadoop.fs.FileSystem.get(new java.net.URI("hdfs://SGBBDPOC01.men.com.my:8020"), sc.hadoopConfiguration)
@@ -30,9 +30,9 @@ object ReadHDFS {
 
   def readParquet(sqlContext: SQLContext) = {
     // read back parquet to DF
-    val rdd = sqlContext.read.format("csv").option("header", "true").load(path ="hdfs://SGBBDPOC01.men.com.my:8020/data/okla/txt/okala_main_all.csv")
+    val rdd = sqlContext.read.format("csv").option("header", "true").load(path ="hdfs://SGBBDCDPOC0123.men.com.my:8020/data/okla/txt/okala_main_all.csv")
 
-    //    val newDataDF = sqlContext.read.parquet("hdfs://SGBBDCDPOC01.men.maxis.com.my:50470/Sales.parquet")
+    //    val newDataDF = sqlContext.read.parquet("hdfs://SGBBDCDPOC01.men.max.com.my:50470/Sales.parquet")
     // show contents
     rdd.show()
 
