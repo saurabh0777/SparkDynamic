@@ -13,10 +13,10 @@ import org.apache.spark.sql.SparkSession
 
     val jdbcDF = spark.read
       .format("jdbc")
-      .option("url", "jdbc:oracle:thin:@10.100.65.36:1521/CVMDBP")
+      .option("url", "jdbc:oracle:thin:@10.100.65.136:1521/CVMDBP")
       .option("dbtable", "MINING.CAR_PR_SUB_CSV_20181031")
-      .option("user", "XYZEG")
-      .option("password", "FAU#rf")
+      .option("user", "XYZ")
+      .option("password", "FAU#")
       .option("driver", "oracle.jdbc.OracleDriver")
       .load()
       
