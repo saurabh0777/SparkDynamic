@@ -10,7 +10,7 @@ object RunEtl  {
 
     val connectionProperties = new Properties()
     connectionProperties.put("user", "bigdatadev")
-    connectionProperties.put("password", "MSPuT4!$")
+    connectionProperties.put("password", "MSPuT")
 
    
 
@@ -20,7 +20,7 @@ object RunEtl  {
       .master("local")
       .config("ConnectionUserName", "bigdatadev")
       .config("ConnectionPassword","MSa4d!$")
-      .config("hive.metastore.warehouse.uris","thrift://SGBRTSDPOC01.com.my:9083")
+      .config("hive.metastore.warehouse.uris","thrift://SGBRTSDPOC121.com.my:9083")
 
       .config("spark.sql.warehouse.dir", "/user/hive/warehouse/")
       .enableHiveSupport()
